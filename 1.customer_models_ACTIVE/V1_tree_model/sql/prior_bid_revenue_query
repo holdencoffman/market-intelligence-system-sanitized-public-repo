@@ -1,0 +1,121 @@
+WITH bids_with_window AS (
+    SELECT
+        b.BID_NAME,
+        b.BID_DATE,
+        b.RELATED_SITE_ID AS CRM_PROPERTY_ID,
+        v.PROPERTY_ID AS UNIQUE_PROPERTY_ID,   -- need to pull in [John Doe]'s unique property ID from [V_DUMMY_VIEW] in order to link all revenue back to one property
+        b.PROPERTY_ID AS STORE_NUMBER,
+        b.WIN_LOSS,
+        b.ADDRESS_STREET,
+        b.ADDRESS_CITY,
+        b.ADDRESS_STATE,
+        b.ADDRESS_ZIP,
+        b.CUSTOMER_HOURLY_RATE,
+        b.RECORD_ID,
+        DATEADD(MONTH, 0, b.BID_DATE) AS WINDOW_START, -- setting a revenue window of 1 year
+        DATEADD(MONTH, 12, b.BID_DATE) AS WINDOW_END,
+
+        /*pull the mapped service line from service line xwalk table; if no mapping, fall back to cleaned original*/
+        COALESCE(x.CANONICAL_LINE,
+            LOWER(TRIM(b.SERVICE_LINE))) AS CANONICAL_SERVICE_LINE
+    FROM
+        PROD.DUMMY_SCHEMA.DUMMY_TABLE b
+    LEFT JOIN PROD.DUMMY_SCHEMA.DUMMY_XWALK x
+        ON LOWER(TRIM(b.SERVICE_LINE)) = x.BID_SERVICE_LINE
+    LEFT JOIN PROD.DUMMY_SCHEMA.V_DUMMY_PROPERTY_TABLE v
+        ON LOWER(TRIM(b.RELATED_SITE_ID)) = LOWER(TRIM(v.SOURCE_PROPERTY_ID))
+    WHERE DATEADD(MONTH, 12, b.BID_DATE) <= CURRENT_DATE()
+)/*,
+
+final_results AS(*/
+
+SELECT
+    w.BID_NAME,
+    w.BID_DATE,
+    w.CRM_PROPERTY_ID,
+    w.UNIQUE_PROPERTY_ID,
+    w.STORE_NUMBER,
+    w.WIN_LOSS,
+    w.ADDRESS_STREET,
+    w.ADDRESS_CITY,
+    w.ADDRESS_STATE,
+    w.ADDRESS_ZIP,
+    w.CANONICAL_SERVICE_LINE,
+    w.CUSTOMER_HOURLY_RATE,
+    w.RECORD_ID,
+    w.WINDOW_START,
+    w.WINDOW_END,
+    SUM(r.GROSS_REVENUE) AS TOTAL_REVENUE
+FROM
+    bids_with_window w
+LEFT JOIN
+    PROD.DUMMY_SCHEMA.V_DUMMY_TICKET_TABLE r
+    ON LOWER(TRIM(r.PROPERTY_ID)) = LOWER(TRIM(w.UNIQUE_PROPERTY_ID))
+    AND LOWER(TRIM(r.SERVICE_LINE_NAME)) = w.CANONICAL_SERVICE_LINE
+    AND r.REVENUE_DATE BETWEEN w.WINDOW_START AND w.WINDOW_END
+    AND r.TICKET_CREATE_DATE >= w.BID_DATE
+WHERE w.UNIQUE_PROPERTY_ID IS NOT NULL
+GROUP BY
+    w.BID_NAME,
+    w.BID_DATE,
+    w.CRM_PROPERTY_ID,
+    w.UNIQUE_PROPERTY_ID,
+    w.STORE_NUMBER,
+    w.WIN_LOSS,
+    w.ADDRESS_STREET,
+    w.ADDRESS_CITY,
+    w.ADDRESS_STATE,
+    w.ADDRESS_ZIP,
+    w.CANONICAL_SERVICE_LINE,
+    w.CUSTOMER_HOURLY_RATE,
+    w.RECORD_ID,
+    w.WINDOW_START,
+    w.WINDOW_END
+ORDER BY
+    w.BID_DATE,
+    w.BID_NAME,
+    w.CANONICAL_SERVICE_LINE,
+    w.ADDRESS_CITY;
+)
+
+/*can wrap the final select statement above in a CTE titled final_results and run any of the analyses below*/    
+
+SELECT -- shows all primary bids, as well as the % of them that are showing as zero revenue...79%!!
+    COUNT_IF(COALESCE(TOTAL_REVENUE,0) = 0) AS zero_revenue_primary_bids,
+    COUNT(*) AS total_primary_bids,
+    ROUND(
+        100 * COUNT_IF(COALESCE(TOTAL_REVENUE,0) = 0) / NULLIF(COUNT(*),0),
+        1
+    ) AS pct_zero_revenue
+FROM final_results
+WHERE LOWER(TRIM(WIN_LOSS)) = 'primary';
+
+SELECT -- this analyzes sites that were marked as wins (primary) but didn't actually receive revenue
+    BID_NAME,
+    COUNT_IF(COALESCE(TOTAL_REVENUE,0) = 0) AS zero_revenue_primary_bids,
+    COUNT(*) AS total_primary_bids,
+    ROUND(
+        100 * COUNT_IF(COALESCE(TOTAL_REVENUE,0) = 0) / NULLIF(COUNT(*),0),
+        1
+    ) AS pct_zero_revenue
+FROM final_results
+WHERE LOWER(TRIM(WIN_LOSS)) = 'primary'
+GROUP BY BID_NAME
+ORDER BY pct_zero_revenue desc;
+
+SELECT -- more basic version of the above, shows bids marked primary but zero revenue
+    BID_NAME,
+    COUNT(*) AS primary_bids_zero_revenue
+FROM final_results
+WHERE LOWER(TRIM(WIN_LOSS)) = 'primary'
+    AND COALESCE(TOTAL_REVENUE,0) = 0 -- treat NULL as 0
+GROUP BY
+    BID_NAME;
+
+/*Other ideas for sanity checks and data anlysis include:
+    1. Tickets that hit the window but ignored the service-line mapping
+    2. Double-check the 12-month cutoff logic
+    3. 1:1 uniqueness of the dummy ID per record ID
+    4. Anything else you can think of. Might be good to look for overlap...i.e. a ticket being attributed to multiple bids. Probably shouldn't happen but just something to consider
+    
+
