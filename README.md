@@ -3,7 +3,7 @@
 ## Repo Overview
 This repository contains foundational documents and prototype components for a machine learning-based optimization engine designed to dynamically balance pricing and fulfillment in a two-sided Facilities Maintenance marketplace. What I am referring to as the "engine" is really 4 components: an ML model that predicts elasticity of demand, an ML model that predicts elasticity of supply, a bridge layer that allows their outputs to be linked so that real seasonal outcomes can be simulated at the time of an RFP, and finally the optimization loop that links it all together to guide pricing toward the profit-maximizing outcome - both maximizing price on the customer side, prior to the season; and minimizing price on the provider side, during the season; effectively choosing the optimal mix of revenue, cost, and volume to maximize GP. The combination of these parts working together in unison forms a cohesive engine, which will be the heart of what I am calling the first true FM "Market Intelligence System".
 
-Please refer to the "Market Optimization Engine Blueprint" pdf in this repo for a comprehensive summary of the vision, which will also help to explain the structure of the repo.
+`Please refer to the "Market Optimization Engine Blueprint" pdf in this repo for a comprehensive summary of the vision, which will also help to explain the structure of the repo.`
 
 ## Current Progress
 
