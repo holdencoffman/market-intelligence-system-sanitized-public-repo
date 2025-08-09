@@ -4,7 +4,7 @@ The initial prototype of the customer price sensitivity model was developed usin
 
 The next iteration of the customer price sensitivity model will be a gradient boosted decision tree model from the XGBoost library in Python. Here is a quick sketch of the model’s blueprint as of today:
 
-### Features (Not an Exhaustive List - Am Actively 
+### Features (Not an Exhaustive List)
 - Latitude
 - Longitude
 - Customer
