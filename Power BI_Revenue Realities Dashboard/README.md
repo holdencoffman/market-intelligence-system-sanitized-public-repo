@@ -5,7 +5,7 @@
 
 ## 📊 Background and Overview
 
-The internal reporting we initially leveraged relied on to model customer price sensitivity relied on binary win/loss designations as indicators of customer price acceptance. But after months of anecdotal observations suggesting a divergence between award status and actual revenue realization, I designed a dashboard to investigate the pattern at scale and to test my hypothesis that in order to effectively model customer price sensitivity we would need a different kind of dataset to model off of. 
+The internal reporting we initially leveraged to model customer price sensitivity relied on binary win/loss designations as indicators of customer price acceptance. But after months of anecdotal observations suggesting a divergence between award status and actual revenue realization, I designed a dashboard to investigate the pattern at scale and to test my hypothesis that in order to effectively model customer price sensitivity we would need a different kind of dataset to model off of — one that tracked actual revenue realization rather than just whether a rate sheet was signed at the start of the season. 
 
 This Power BI dashboard analyzes the divergence between **initial bid award designations** (Loss, Win [broken into Primary or Secondary designation]) and the **actual revenue realization** at the site level over the 12 months following the award, across ~155,000 sites and 32 national RFPs spanning back to 2021.
 
