@@ -4,7 +4,7 @@ The initial prototype of the customer price sensitivity model was developed usin
 
 The next iteration of the customer price sensitivity model will be a gradient boosted decision tree model from the XGBoost library in Python. Here is a quick sketch of the model’s blueprint as of today:
 
-### Features
+### Features (Not an Exhaustive List)
 - Latitude
 - Longitude
 - Customer
@@ -13,6 +13,11 @@ The next iteration of the customer price sensitivity model will be a gradient bo
 - Service Trade
 - Total Addressable Spend Per Store For That Trade
 - Customer’s Total Revenue
+- Store size (square feet)
+- Local population
+- State
+- County
+- CBSA
 
 ### Output (Target Variable)
 - Gross Revenue Realized
