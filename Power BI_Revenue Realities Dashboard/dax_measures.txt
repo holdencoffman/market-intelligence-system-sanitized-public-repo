@@ -1,0 +1,29 @@
+Sites = 
+COUNTROWS ( 'V_PB_REV_RLZTN' )
+
+Sites Marked Won = 
+CALCULATE (
+    COUNTROWS ( 'V_PB_REV_RLZTN' ),
+    'V_PB_REV_RLZTN'[Award Designation] IN { "primary", "secondary," }
+)
+
+Sites Receiving Revenue = 
+CALCULATE (
+    COUNTROWS ( 'V_PB_REV_RLZTN' ),
+    'V_PB_REV_RLZTN'[TOTAL_REVENUE] > 0
+)
+
+Tot Pull-Through % = 
+DIVIDE ( [Sites Receiving Revenue], [Sites] )
+
+Win Pull-Through % = 
+DIVIDE ( [Sites Receiving Revenue], [Sites Marked Won] )
+
+Zero-Revenue % = 
+DIVIDE ( [Zero-Revenue Sites], [Sites] )
+
+Zero-Revenue Sites = 
+CALCULATE (
+    COUNTROWS ( 'V_PB_REV_RLZTN' ),
+    COALESCE ( 'V_PB_REV_RLZTN'[TOTAL_REVENUE], 0 ) = 0
+)
