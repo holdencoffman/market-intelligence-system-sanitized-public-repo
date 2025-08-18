@@ -47,10 +47,10 @@ This dashboard helps answer:
 
 - **Sites Marked Won**: Count of sites marked Primary or Secondary
 - **Sites Receiving Revenue**: Sites with ≥1 invoice post-award
-- **Zero-Revenue Sites**: Sites marked won but with $0 realized
-- **Total Pull-Through %**: % of won sites that generated revenue
-- **Zero-Revenue %**: % of won sites that yielded no revenue
-- **Win Pull-Through %**: % of revenue-active sites vs. all Primary sites
+- **Zero-Revenue Sites**: Sites with $0 realized
+- **Total Pull-Through %**: % of all sites that generated revenue
+- **Zero-Revenue %**: % of all sites that yielded no revenue
+- **Win Pull-Through %**: % of won sites that generated revenue
 
 ---
 
@@ -70,8 +70,8 @@ Donut visual showing revenue-generating sites by award category. Here we see tha
 ## 🔎 Strategic Takeaways
 
 - 🎯 **Designation ≠ Delivery**: Primary awards only generated revenue at **1 in 3 sites**.
-- ⚠️ **Zero-Revenue Risk**: Over **66%** of all awarded sites never pulled through to work.
-- 💡 **Loss Sites ≠ Lost Revenue**: A notable share of actual revenue came from sites that were not formally awarded in the RFP Process.
+- ⚠️ **Win Pull-Through Risk**: Over **66%** of all awarded sites never pulled through to work.
+- 💡 **Loss Sites ≠ Lost Revenue**: A notable share of actual revenue (26%) came from sites that were not formally awarded in the RFP Process.
 
 ---
 
