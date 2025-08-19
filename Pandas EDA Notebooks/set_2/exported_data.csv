@@ -1,0 +1,51 @@
+CustomerID,Name,Age,SignupDate,Location,Email,TotalSpent,NumOrders,IsSubscribed,AgeGroup,AvgOrderValue,TenureDays
+de78cf38,Amber Reese,56,2025-01-19,Gutierrezport,andrew58@gmail.com,4829.88,23,False,46-60,209.99478260869566,211
+0169afb5,Ashley Chandler,69,2025-07-13,Dorothymouth,ytrujillo@barajas.net,4051.57,24,True,61+,168.81541666666666,36
+c50316e8,Nichole Davies,46,2024-03-06,Port David,rburke@hotmail.com,1557.84,5,True,46-60,311.568,530
+87310bf8,Dakota Nelson,32,2024-12-12,Camachoside,davidschaefer@gmail.com,533.48,3,False,31-45,177.82666666666668,249
+64d622bc,Haley Hansen,60,2025-03-01,North Sarah,austinashley@abbott-payne.com,3436.95,12,True,46-60,286.41249999999997,170
+4dcf3c86,Lisa Proctor DDS,25,2025-04-09,South Michael,sanchezjennifer@skinner.com,2228.75,8,True,18-30,278.59375,131
+1bb75e35,Curtis Benton,38,2024-06-17,Jessicaport,rchapman@gmail.com,654.09,22,True,31-45,29.73136363636364,427
+c10433d8,Charles Hess,56,2025-02-06,New Julie,lucerokelly@wade.biz,2501.13,3,True,46-60,833.71,193
+25e31d15,Barbara Brady,36,2024-07-26,Nobleshire,tyoung@carter-moyer.com,220.22,1,False,31-45,220.22,388
+b85ed570,Matthew Garcia,40,2025-05-02,Port Tamarahaven,taylorpaul@yahoo.com,4551.14,3,True,31-45,1517.0466666666669,108
+f9520240,Pamela Martin,28,2025-07-29,Mccormicktown,katherinemckinney@lopez.com,1330.96,5,False,18-30,266.192,20
+40a1dac8,Peter Smith,28,2024-10-28,Lake Leah,sandrajackson@davis-smith.biz,3329.49,15,True,18-30,221.96599999999998,294
+eff9d814,Kristen Roman,41,2025-04-26,Garciaton,jeffreyanderson@watts-pitts.com,1592.97,14,True,31-45,113.78357142857143,114
+faeb241e,Miranda Brennan,53,2024-12-09,South Sandrafurt,pgray@gmail.com,2624.34,3,True,46-60,874.7800000000001,252
+cfcb0e59,Sarah Watson,57,2023-11-18,Zacharyfurt,thomasmullins@martinez.org,2756.22,1,True,46-60,2756.22,639
+e96091cd,Sandra Davis,41,2024-12-16,Port Marthaton,xreed@vargas.org,965.03,5,False,31-45,193.006,245
+470ae57d,Stephanie Adams,20,2025-07-02,East Carolyn,amandawhite@yahoo.com,4849.44,23,False,18-30,210.84521739130432,47
+6b3e257c,Jessica Davis,39,2025-04-29,Leeburgh,keith57@daniels.com,3886.91,14,True,31-45,277.63642857142855,111
+d5a3728d,Robert Johnson,19,2023-09-13,Jeremiahbury,finleyandrew@gmail.com,4700.52,7,True,18-30,671.5028571428572,705
+91d13a2d,Steven Lucas,41,2024-04-05,North Maria,wolfelizabeth@yahoo.com,4479.4,9,False,31-45,497.71111111111105,500
+b12061a8,Brittany Le,61,2023-12-18,Sanchezberg,josephromero@hotmail.com,3009.6,15,True,61+,200.64,609
+df7c06e0,Tiffany Chavez MD,47,2025-03-23,Hunterborough,mark00@harmon.com,4613.28,15,True,46-60,307.55199999999996,148
+2b723c75,Dustin Garrison,55,2025-03-31,West Douglas,james10@gmail.com,488.04,10,True,46-60,48.804,140
+69131072,Martin Joseph,19,2025-01-09,Janiceshire,turnerjeffrey@hotmail.com,1020.12,13,False,18-30,78.47076923076924,221
+67be3d24,Elaine Sims,38,2025-05-07,Howellborough,ogreen@crane-williams.com,273.88,19,False,31-45,14.414736842105263,103
+2dc3c6ff,James Day,50,2024-01-29,Duarteberg,jonesedward@morgan.biz,1660.39,7,False,46-60,237.19857142857146,567
+853a88f5,Courtney Howard,29,2025-02-21,Mercadoton,jaredblackburn@hotmail.com,1973.95,17,True,18-30,116.11470588235295,178
+91e65006,Jeffrey Beard,39,2023-12-10,North Judyview,freemanjerry@daniels-bauer.biz,1393.18,20,True,31-45,69.659,617
+63867470,Blake Patterson,61,2025-01-14,Lucasmouth,michael96@chambers.com,4152.25,4,False,61+,1038.0625,216
+aea26017,Samuel Smith,42,2024-01-13,Robertburgh,katrinatate@rice.com,1815.93,5,False,31-45,363.18600000000004,583
+72e8a144,Christopher Gonzales,66,2024-10-27,New Kellyfurt,richard24@hotmail.com,1440.63,23,False,61+,62.636086956521744,295
+915f7640,Tanya Wyatt,44,2023-11-12,Mariahaven,dperez@gmail.com,2736.35,7,False,31-45,390.90714285714284,645
+fcd7e226,Jermaine Smith,59,2024-05-31,Dominguezfurt,abigailbrooks@juarez.com,747.57,13,True,46-60,57.50538461538462,444
+0036d742,Julie Nielsen,45,2023-08-23,Stephanieside,ricardomooney@villarreal.com,4020.88,15,False,31-45,268.0586666666667,726
+9a939701,Tammy Reynolds,33,2024-01-04,Port Lauren,xprince@arroyo-armstrong.net,419.03,11,True,31-45,38.093636363636364,592
+83488121,John Smith,32,2024-06-07,Ryanview,krausetammy@cooke-preston.com,4935.09,4,False,31-45,1233.7725,437
+199a0649,Amy Rogers,64,2023-09-01,Port Tonychester,thomasdavid@hotmail.com,3872.61,13,True,61+,297.89307692307693,717
+f877d9ce,Logan Jordan,68,2023-11-06,Port Paul,cortezmichael@gmail.com,1033.64,7,False,61+,147.66285714285715,651
+6ca53439,Anna Davis,61,2025-01-30,Robertport,andrew44@hotmail.com,77.33,19,False,61+,4.07,200
+6208f1d6,Kimberly Hughes,69,2023-12-10,Jennifershire,enavarro@duarte.com,4086.53,22,False,61+,185.75136363636364,617
+8222e321,Andrew Moore,20,2025-07-09,Davidberg,crawfordmelinda@yahoo.com,3548.94,2,False,18-30,1774.47,40
+4a7a2a99,Yvonne Fuller,54,2025-01-01,Ryanberg,falvarez@wagner-wilson.net,3658.59,10,True,46-60,365.85900000000004,229
+73855f5f,Kari Sanchez,68,2025-06-10,South Ashley,davisdylan@gmail.com,3867.79,13,False,61+,297.52230769230766,69
+b796df8c,Katherine Torres,24,2024-09-18,North Olivia,cindymiller@peterson-young.net,416.52,21,True,18-30,19.834285714285713,334
+1eb7c70f,Megan Nguyen,38,2024-06-02,South Matthewbury,fmitchell@baker-dickson.com,1824.41,6,True,31-45,304.0683333333333,442
+820f4ec2,James Sparks,26,2024-03-06,North Kevin,eford@wang-simpson.com,623.55,12,True,18-30,51.9625,530
+344edba1,Megan Anderson,56,2024-07-14,West Larry,jasonwyatt@nicholson.com,4322.36,12,True,46-60,360.19666666666666,400
+3edc92b9,Shannon Cunningham,35,2024-01-02,Timothyside,sthomas@gmail.com,3135.33,20,False,31-45,156.7665,594
+b5077a68,Wendy Whitney,21,2025-06-23,North Richard,kcarr@reed-green.com,1687.95,11,True,18-30,153.45000000000002,56
+9d2a7a26,Shane Duncan,42,2025-05-26,Port Johnville,patricksmith@yoder.com,364.61,23,True,31-45,15.852608695652174,84
